@@ -6,7 +6,7 @@ and describe each action step by step.
 
 **FYI**: [App](https://github.com/nastia-shaternik/dev) that we use in this deployment session.
 
-## Dokku Instalation
+## Dokku Installation
 We will run Dokku on [AWS EC2](https://aws.amazon.com/ec2) instance. How to setup an instance is not a part of this guide. Make sure you have ability to ssh on your instance.
 Also have a look at [Digital Ocean](https://www.digitalocean.com/products/one-click-apps/dokku/) where you can choose an instace with already installed Dokku preset.
 
@@ -71,7 +71,7 @@ web: bin/rails server -p 5000 -e production
 ```
 Consider to move POST and RAILS_ENV into the ENV vars.
 
-Also, if needed, add `gem 'rails_12factor', group: :production` into your `Gemfile`. Read about it [here](https://github.com/heroku/rails_12factor). [Why does this gem exist?](https://github.com/heroku/rails_12factor/issues/3)?
+Also, if needed, add `gem 'rails_12factor', group: :production` into your `Gemfile`. Read about it [here](https://github.com/heroku/rails_12factor). [Why does this gem exist?](https://github.com/heroku/rails_12factor/issues/3)
 
 ## Deployment
 
@@ -82,6 +82,8 @@ Firstly, we need to add remote:
 
 `git remote add dokku dokku@#{PUBLIC_IP}:#{APP_NAME}`
 
+Then push to remote repository to trigger a deployment:
+
 `git push dokku master`
 
 ![Dokku Deploy Start](https://raw.githubusercontent.com/nastia-shaternik/dokku-manual/master/images/dokku-deploy-1.png)
@@ -89,3 +91,8 @@ Firstly, we need to add remote:
 ![Dokku Deploy End](https://raw.githubusercontent.com/nastia-shaternik/dokku-manual/master/images/dokku-deploy-2.png)
 
 ## Conclusion
+
+Dokku provides as the same environment as we experienced with Heroku but
+with less costs.
+It has a wide range of plugins to use - [see here](http://dokku.viewdocs.io/dokku/community/plugins/).
+
