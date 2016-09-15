@@ -21,7 +21,8 @@ sudo DOKKU_TAG=v0.7.1 bash bootstrap.sh
 ## Preparations with Dokku
 When Dokku is installed you need to setup it. Enter your instance *public IP* in the browser - and you will go onto Dokku admin setup.
 
-![Dokku Admin Setup][https://raw.githubusercontent.com/nastia-shaternik/dokku-manual/master/images/dokku-admin-setup.png]
+[[https://raw.githubusercontent.com/nastia-shaternik/dokku-manual/master/images/dokku-admin-setup.png|alt=Dokku Admin Setup]]
+
 
 ## Preparations with rails app
 
