@@ -71,7 +71,7 @@ web: bin/rails server -p 5000 -e production
 ```
 Consider to move POST and RAILS_ENV into the ENV vars.
 
-Also, if needed, add `gem 'rails_12factor', group: :production` into your `Gemfile`. Read about it [here](https://github.com/heroku/rails_12factor).
+Also, if needed, add `gem 'rails_12factor', group: :production` into your `Gemfile`. Read about it [here](https://github.com/heroku/rails_12factor). [Why does this gem exist?](https://github.com/heroku/rails_12factor/issues/3)?
 
 ## Deployment
 
