@@ -84,8 +84,8 @@ Firstly, we need to add remote:
 
 `git push dokku master`
 
-![Dokku Deploy Start](https://raw.githubusercontent.com/nastia-shaternik/dokku-manual/master/images/dokku-admin-setup.png)
+![Dokku Deploy Start](https://raw.githubusercontent.com/nastia-shaternik/dokku-manual/master/images/dokku-deploy-1.png)
 
-![Dokku Deploy End](https://raw.githubusercontent.com/nastia-shaternik/dokku-manual/master/images/dokku-admin-setup.png)
+![Dokku Deploy End](https://raw.githubusercontent.com/nastia-shaternik/dokku-manual/master/images/dokku-deploy-2.png)
 
 ## Conclusion
