@@ -73,7 +73,7 @@ Consider to move POST and RAILS_ENV into the ENV vars.
 
 Also, if needed, add `gem 'rails_12factor', group: :production` into your `Gemfile`. Read about it [here](https://github.com/heroku/rails_12factor). [Why does this gem exist?](https://github.com/heroku/rails_12factor/issues/3)
 
-## Deployment
+### Deployment
 
 Dokku suports deployment using Dokerfile or Docker image or tarfile or buildpacks. The last method
 that we're using. To deal with buildpacks Dokku uses [Herokuish](https://github.com/gliderlabs/herokuish).
@@ -95,4 +95,68 @@ Then push to remote repository to trigger a deployment:
 Dokku provides as the same environment as we experienced with Heroku but
 with less costs.
 It has a wide range of plugins to use - [see here](http://dokku.viewdocs.io/dokku/community/plugins/).
+
+
+# Additional
+
+## Continuous integration/deployment
+
+As option you can setup CI/CD on your project. In this example I will
+use [CircleCi](https://circleci.com/) - nice and handy CI tool.
+
+Firstly, you need to link your project with CircleCI throgh Github or
+Bitbucket.
+
+![CircleCI link project](https://raw.githubusercontent.com/nastia-shaternik/dokku-manual/master/images/circle-ci-link-project.png)
+
+If you're using Rails project Circle CI will automatically run Unit
+tests or Rspec after link. Or you can change the way test (for instance)
+should be run - using `circle.yml` config file.
+
+```yaml
+# circle.yml
+
+test:
+  override:
+    - mocha
+```
+
+More information about `circle.yml` [here](https://circleci.com/docs/configuration/).
+
+Thes described above step was about continuous integration - Circle CI
+will check how new commit 'integrates' into the existing project.
+
+Another feature that you possibly want to add - continuous deployment:
+deploy your project immidiately if it integrates well.
+
+As we use our own dokku server we will use custom solution.
+
+Add section into `circle.yml`:
+
+```yaml
+deployment:
+  production:
+    branch: master
+    commands:
+      - ./deploy.sh
+```
+
+Add deployment script `deploy.sh`:
+
+```bash
+#! /bin/bash
+
+git remote add dokku dokku@52.11.207.162:rails-sample
+git push dokku master
+```
+
+Don't forget to make it runnable: `chmod +x deploy.sh`.
+
+You also need *your private key to Circle CI* (sux!) in order to let it
+deploy to the Dokku server.
+
+Find it in your project settings:
+
+![CircleCI SSH permissions](https://raw.githubusercontent.com/nastia-shaternik/dokku-manual/master/images/circle-ci-ssh-permissions.png)
+
 
