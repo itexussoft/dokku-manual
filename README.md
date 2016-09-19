@@ -104,13 +104,13 @@ It has a wide range of plugins to use - [see here](http://dokku.viewdocs.io/dokk
 As option you can setup CI/CD on your project. In this example I will
 use [CircleCi](https://circleci.com/) - nice and handy CI tool.
 
-Firstly, you need to link your project with CircleCI throgh Github or
+Firstly, you need to link your project with CircleCI through Github or
 Bitbucket.
 
 ![CircleCI link project](https://raw.githubusercontent.com/nastia-shaternik/dokku-manual/master/images/circle-ci-link-project.png)
 
 If you're using Rails project Circle CI will automatically run Unit
-tests or Rspec after link. Or you can change the way test (for instance)
+tests or Rspec after linking. Or you can change the way test (for instance)
 should be run - using `circle.yml` config file.
 
 ```yaml
@@ -146,14 +146,14 @@ Add deployment script `deploy.sh`:
 ```bash
 #! /bin/bash
 
-git remote add dokku dokku@52.11.207.162:rails-sample
+git remote add dokku dokku@#{PUBLIC_IP}:#{APP_NAME}
 git push dokku master
 ```
 
 Don't forget to make it runnable: `chmod +x deploy.sh`.
 
 You also need *your private key to Circle CI* (sux!) in order to let it
-deploy to the Dokku server.
+deploys to the Dokku server.
 
 Find it in your project settings:
 
