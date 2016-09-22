@@ -96,6 +96,9 @@ Dokku provides as the same environment as we experienced with Heroku but
 with less costs.
 It has a wide range of plugins to use - [see here](http://dokku.viewdocs.io/dokku/community/plugins/).
 
+If you have any questions - please share them as issues.
+Thanx!
+
 
 # Additional
 
