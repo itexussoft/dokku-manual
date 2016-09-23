@@ -2,7 +2,7 @@
 
 In this manual we're going to deploy sample rails app (backed w/ PostgreSQL) on [Dokku](https://github.com/dokku/dokku) and describe each action step by step.
 
-**FYI**: [App](https://github.com/nastia-shaternik/dev) that we use in this deployment session.
+**FYI**: [App](https://github.com/itexussoft/dev) that we use in this deployment session.
 
 ## Dokku Installation
 We will run Dokku on [AWS EC2](https://aws.amazon.com/ec2) instance. How to setup an instance is not a part of this guide. Make sure you have ability to ssh on your instance.
@@ -21,7 +21,7 @@ sudo DOKKU_TAG=v0.7.1 bash bootstrap.sh
 ### Dokku Admin Setup
 When Dokku is installed you need to setup it. Enter your instance *public IP* in the browser - and you will go onto Dokku admin setup.
 
-![Dokku Image Setup](https://raw.githubusercontent.com/nastia-shaternik/dokku-manual/master/images/dokku-admin-setup.png)
+![Dokku Image Setup](https://raw.githubusercontent.com/itexussoft/dokku-manual/master/images/dokku-admin-setup.png)
 
 Ensure you've pasted your *public key* (served on machine you'll
 deploy from) or you'll lost an ability to deploy at all.
@@ -83,9 +83,9 @@ Then push to remote repository to trigger a deployment:
 
 `git push dokku master`
 
-![Dokku Deploy Start](https://raw.githubusercontent.com/nastia-shaternik/dokku-manual/master/images/dokku-deploy-1.png)
+![Dokku Deploy Start](https://raw.githubusercontent.com/itexussoft/dokku-manual/master/images/dokku-deploy-1.png)
 
-![Dokku Deploy End](https://raw.githubusercontent.com/nastia-shaternik/dokku-manual/master/images/dokku-deploy-2.png)
+![Dokku Deploy End](https://raw.githubusercontent.com/itexussoft/dokku-manual/master/images/dokku-deploy-2.png)
 
 ## Conclusion
 
@@ -106,7 +106,7 @@ use [CircleCi](https://circleci.com/) - nice and handy CI tool.
 Firstly, you need to link your project with CircleCI through Github or
 Bitbucket.
 
-![CircleCI link project](https://raw.githubusercontent.com/nastia-shaternik/dokku-manual/master/images/circle-ci-link-project.png)
+![CircleCI link project](https://raw.githubusercontent.com/itexussoft/dokku-manual/master/images/circle-ci-link-project.png)
 
 If you're using Rails project Circle CI will automatically run Unit
 tests or Rspec after linking. Or you can change the way tests (for example) should be run - using `circle.yml` config file.
@@ -155,5 +155,5 @@ deploys to the Dokku server.
 
 Add it in your project settings:
 
-![CircleCI SSH permissions](https://raw.githubusercontent.com/nastia-shaternik/dokku-manual/master/images/circle-ci-ssh-permissions.png)
+![CircleCI SSH permissions](https://raw.githubusercontent.com/itexussoft/dokku-manual/master/images/circle-ci-ssh-permissions.png)
 
